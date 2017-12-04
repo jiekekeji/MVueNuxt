@@ -1,5 +1,5 @@
 {
-  "name": "demo002",
+  "name": "demo003",
   "version": "1.0.0",
   "description": "Nuxt.js project",
   "author": "jiekekeji <jieke_rose@foxmail.com>",
@@ -13,7 +13,6 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "axios": "^0.17.1",
     "nuxt": "^1.0.0-rc11"
   },
   "devDependencies": {
