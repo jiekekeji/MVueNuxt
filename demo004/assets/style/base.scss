@@ -1,0 +1,18 @@
+/**
+将px按照设计图的尺寸转为rem
+使用flexible的转换规则：
+各元素的css尺寸=设计稿标注尺寸/设计稿横向分辨率/10,
+$px元素在设计图的尺寸，$$totalpx设计图横向宽度
+ */
+@function pxToRem($px, $totalpx) {
+  @return ($px /( $totalpx/10))+rem;
+}
+
+/**
+主体内容居中
+ */
+.container {
+  margin: 0 auto;
+  width: pxToRem(1080, 1080);
+  height: auto;
+}
