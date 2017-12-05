@@ -1,19 +1,14 @@
 <template>
   <section class="container">
-    <div>
-      <logo/>
-      <h1 class="title">
-        demo005
-      </h1>
-      <h2 class="subtitle">
-        Nuxt.js project
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
-        <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
-      </div>
-      <el-input v-model="input" placeholder="请输入内容"></el-input>
-    </div>
+    <el-input v-model="input" placeholder="请输入内容"></el-input>
+    <el-select v-model="value" placeholder="请选择">
+      <el-option
+        v-for="item in options"
+        :key="item.value"
+        :label="item.label"
+        :value="item.value">
+      </el-option>
+    </el-select>
   </section>
 </template>
 
@@ -23,7 +18,24 @@
   export default {
     data() {
       return {
-        input: ''
+        input: '',
+        options: [{
+          value: '选项1',
+          label: '黄金糕'
+        }, {
+          value: '选项2',
+          label: '双皮奶'
+        }, {
+          value: '选项3',
+          label: '蚵仔煎'
+        }, {
+          value: '选项4',
+          label: '龙须面'
+        }, {
+          value: '选项5',
+          label: '北京烤鸭'
+        }],
+        value: ''
       }
     },
     components: {
