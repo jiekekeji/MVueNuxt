@@ -33,7 +33,8 @@ module.exports = {
       //     exclude: /(node_modules)/
       //   })
       // }
-    }
+    },
+    vendor: ['element-ui']
   },
   plugins: ['~plugins/element-ui']
 }

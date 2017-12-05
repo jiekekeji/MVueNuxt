@@ -88,3 +88,12 @@ vue  vue-template-compiler  vue-server-renderer 都有两个版本存在，删�
 
 
 11、启动应用（npm run dev）,浏览器访问localhost:3000，OK.
+
+12、将element-ui打包到库文件中的配置,在nuxt.config.js中加入(官方文档原话:实际上， vue-notifications 会被打包至应用的脚本代码里， 但是它属于第三方库，我们理应将它打包至库文件里以获得更好的缓存效果。（译者注：应用代码比库文件修改频繁，应尽量将第三方库打包至单独的文件中去）。):
+```
+module.exports = {
+  build: {
+    vendor: ['element-ui']
+  },
+}
+```
