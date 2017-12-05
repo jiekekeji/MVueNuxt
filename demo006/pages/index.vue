@@ -13,6 +13,9 @@
       //2、将数据返回,这里的数据会和data(){return {}}合并
       return {title: "获取数据后返回"}
     },
+    fetch ({store}) {
+      store.commit('increment')
+    },
     data() {
       return {}
     },
