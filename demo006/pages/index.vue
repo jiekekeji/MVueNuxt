@@ -1,46 +1,23 @@
 <template>
   <section class="container">
-    <el-input v-model="input" placeholder="请输入内容"></el-input>
-    <el-select v-model="value" placeholder="请选择">
-      <el-option
-        v-for="item in options"
-        :key="item.value"
-        :label="item.label"
-        :value="item.value">
-      </el-option>
-    </el-select>
+    <h2>展示asyncData和data的数据:</h2>
+    {{title}}
   </section>
 </template>
 
 <script>
-  import Logo from '~/components/Logo.vue'
-
   export default {
-    data() {
-      return {
-        input: '',
-        options: [{
-          value: '选项1',
-          label: '黄金糕'
-        }, {
-          value: '选项2',
-          label: '双皮奶'
-        }, {
-          value: '选项3',
-          label: '蚵仔煎'
-        }, {
-          value: '选项4',
-          label: '龙须面'
-        }, {
-          value: '选项5',
-          label: '北京烤鸭'
-        }],
-        value: ''
-      }
+    async asyncData (context) {
+      //1、获取数据
+
+      //2、将数据返回,这里的数据会和data(){return {}}合并
+      return {title: "获取数据后返回"}
     },
-    components: {
-      Logo
-    }
+    data() {
+      return {}
+    },
+    components: {},
+
   }
 </script>
 
@@ -53,24 +30,4 @@
     text-align: center;
   }
 
-  .title {
-    font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-    display: block;
-    font-weight: 300;
-    font-size: 100px;
-    color: #35495e;
-    letter-spacing: 1px;
-  }
-
-  .subtitle {
-    font-weight: 300;
-    font-size: 42px;
-    color: #526488;
-    word-spacing: 5px;
-    padding-bottom: 15px;
-  }
-
-  .links {
-    padding-top: 15px;
-  }
 </style>
